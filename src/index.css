@@ -9,46 +9,61 @@ body {
   height: 400px;
 
   margin: 50px auto 0;
-  border: 1px solid #ccc;
+  border: 1px solid #0000001a;
   border-radius: 4px;
   padding: 20px 10px;
 
-  -webkit-box-shadow: 0px 0px 10px 1px #ccc;
-  box-shadow: 0px 0px 10px 1px #ccc;
+  box-shadow: 0px 0px 10px 1px #a9a9a9;
+  background: linear-gradient(45deg, #ffffff, #ffdeea, #ffffff, #d5ffe9, #ffffff, #fcfdd5, #ffffff, #ffcfe1 , #ffffff);
   overflow: overlay;
 }
 
 .todo-title{
   text-align: center;
   margin: 0;
+  color: #000000a3;
 }
 
 .todo-form{
   text-align: center;
   margin: 20px 0;
+  color: #000000a3;
 }
 
 .todo-form__input{
-  border: 1px solid #ccc;
+  border: 1px solid #0000001a;
   padding: 15px;
   border-radius: 4px;
-  box-shadow: 0px 0px 5px 0px #ccc;
+  font-size: 14px;
+
+  box-shadow: 0px 0px 5px 0px #a9a9a9;
+  background: #fff;
+}
+
+.todo-form__input:focus{
+  outline: none;
 }
 
 .todo-form__button{
-  border: 1px solid #ccc;
+  border: 1px solid #0000001a;
   padding: 15px;
   border-radius: 4px;
+  font-size: 14px;
 
   margin-left: 5px;
-  background-color: #fff;
+  background: #fff;
+  color: #000000a3;
   cursor: pointer;
-  box-shadow: 0px 0px 5px 0px #ccc;
+  box-shadow: 0px 0px 5px 0px #a9a9a9;
 
   -webkit-transition: transform 0.1s ease-out;
   -moz-transition: transform 0.1s ease-out;
   -o-transition: transform 0.1s ease-out;
   transition: transform 0.1s ease-out;
+}
+
+.todo-form__button:focus{
+  outline: none;
 }
 
 .todo-form__button:hover{
@@ -64,20 +79,22 @@ body {
   width: 280px;
   padding: 0;
   margin-left: 60px;
+  color: #000000a3;
 
   list-style: none;
 }
 
 .todo-list__item{
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #0000001a;
   padding: 10px 25px 10px 10px;
 
   border-radius: 4px;
-  box-shadow: 0px 0px 5px 0px #ccc;
-  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px #a9a9a9;
+  color: #000000a3;
+  background: #fff;
   cursor: pointer;
 
   -webkit-transition: transform 0.1s ease-out;
@@ -90,7 +107,7 @@ body {
   display: none;
   content:"×";
   font-size: 30px;
-  color: #ff7878;
+  color: #ffd0e1;
 }
 
 .todo-list__item:hover{

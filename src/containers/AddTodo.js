@@ -1,8 +1,9 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 
-const AddTodo = ({ dispatch }) => {
+const AddTodo = ({ addTodo }) => {
   let input
 
   return (
@@ -11,15 +12,22 @@ const AddTodo = ({ dispatch }) => {
         if (!input.value.trim()) {
           return
         }
-        dispatch(addTodo(input.value))
+        addTodo(input.value)
         input.value = ''
       }}>
         <input className="todo-form__input" ref={node => input = node} placeholder="Добавьте задачу!!"/>
         <button className="todo-form__button" type="submit" >
-          Add Todo
+          Запись
         </button>
       </form>
   )
 }
 
-export default connect()(AddTodo)
+const mapDispatchToProps = dispatch => bindActionCreators({
+  addTodo
+}, dispatch)
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(AddTodo)

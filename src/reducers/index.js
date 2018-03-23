@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
+import * as types from '../constants/ActionTypes';
 
-function visibilityFilter(state = 'SHOW_ALL', action) {
+function visibilityFilter(state = '', action) {
   switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
+    case types.SET_VISIBILITY_FILTER:
       return Object.assign({}, state, {
         visibilityFilter: action.filter
       })
@@ -13,7 +14,7 @@ function visibilityFilter(state = 'SHOW_ALL', action) {
 
 function todos(state = [], action) {
   switch (action.type) {
-    case 'ADD_TODO':
+    case types.ADD_TODO:
       return [
         ...state,
         {
@@ -22,15 +23,8 @@ function todos(state = [], action) {
           completed: false
         }
       ]
-    case 'TOGGLE_TODO':
-      return state.map(todo =>{
-        if (todo.id === action.id) {
-          return Object.assign({}, todo, {
-            completed: !todo.completed
-          })
-        }
-        return todo
-      })
+    case types.DELETE_TODO:
+      return state.filter(item => item.id !== action.id)
     default:
       return state
   }
