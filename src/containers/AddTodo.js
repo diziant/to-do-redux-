@@ -12,7 +12,7 @@ const AddTodo = ({ addTodo }) => {
         if (!input.value.trim()) {
           return
         }
-        addTodo(input.value)
+        addTodo({text: input.value})
         input.value = ''
       }}>
         <input className="todo-form__input" ref={node => input = node} placeholder="Добавьте задачу!!"/>

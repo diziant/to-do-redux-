@@ -1,19 +1,31 @@
-import * as types from '../constants/ActionTypes';
-
+//import * as types from '../constants/ActionTypes';
+import { createAction } from 'redux-actions';
+/*
 let nextTodoId = 0
 
 export const addTodo = text => ({
     type: types.ADD_TODO,
-    id: nextTodoId++,
-    text
+    payload: {
+        id: nextTodoId++,
+        text 
+    }
 })
 
 export const setVisibilityFilter = filter => ({
     type: types.SET_VISIBILITY_FILTER,
-    filter
+    payload: {
+        filter
+    }
 })
 
 export const deleteTodo = id => ({
     type: types.DELETE_TODO,
-    id 
+    payload: {
+        id 
+    }
 })
+*/
+
+export const addTodo = createAction('ADD_TODO');
+export const deleteTodo = createAction('DELETE_TODO');
+export const setVisibilityFilter  = createAction('SET_VISIBILITY_FILTER');

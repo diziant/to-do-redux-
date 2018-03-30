@@ -8,13 +8,14 @@ const getVisibleTodos = (todos, filter) => {
     case '':
       return todos
     default:
-      return filter
+      return todos.filter(todo => todo.name.includes(filter))
   }
 }
 
 const mapStateToProps = state => ({
-  todos: getVisibleTodos(state.todos, state.visibilityFilter)
-})
+    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  }
+)
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   deleteTodo
