@@ -34,7 +34,11 @@ function visibilityFilter(state = '', action) {
 }
 */
 
-const initialTodos = []
+const initialTodos = [
+  { id: 1, text: '2323', completed: true },
+  { id: 2, text: '2222', completed: false },
+  { id: 3, text: '5555', completed: true }
+]
 
 const initialFilter = ''
 
